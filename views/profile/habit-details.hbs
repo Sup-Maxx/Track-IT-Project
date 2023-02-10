@@ -1,0 +1,56 @@
+<div id="habit-details">
+
+  <div class="left-profile">
+
+    <div id="profile" class="text-start">
+      <h2>Edit your progression</h2>
+    </div>
+
+    <div>
+      <a class="go-back-btn" href="/profile">&#8592; Go back</a>
+    </div>
+
+    <div class="habit-container">
+      
+      <div class="title-option">
+        <h3>{{habit.title}}</h3>
+        <img src="/images/icons/{{habit.category}}.svg" width="64" alt="icon">
+      </div>
+
+      {{! weeks progression }}
+      <form action="/profile/{{habit._id}}/edit-progression" method="POST">
+        <h5 class="duration-option">Duration: {{habit.duration}} days</h5>
+        <h5 class="category-option">Category: {{habit.category}}</h5>
+        <h5 class="description-option">Description: {{habit.description}}</h5>
+
+        <div class="check-progress">
+        {{#if habit.days}}
+          {{#each habit.days}}
+            {{#if done}}
+            <input type="checkbox" name={{name}} class="input-checkbox" checked />
+            {{else}}
+            <input type="checkbox" name={{name}} class="input-checkbox" />
+            {{/if}}
+          {{/each}}
+        {{/if}}
+        </div>
+
+        <button class="button green-button buttons-details btn-center" type="submit">Edit progression</button>
+      
+      </form>
+
+      <div class="buttons-details">
+        <form action="/profile/{{habit._id}}/delete" method="POST">
+          <button class="button red-button">Delete</button>
+        </form>
+
+        <form action="/profile/{{habit._id}}/edit" method="GET">
+          <button class="button green-button">Edit Details</button>
+        </form>
+      </div>
+
+    </div>
+
+</div>
+
+</div>

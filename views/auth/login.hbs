@@ -1,0 +1,43 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+
+<div class="auth-container">
+    <div class="auth-contact-box">
+        
+        <form id="login-form" class="auth-form" action="/login" method="POST">
+
+            <h2 class="auth">Log In</h2>
+            <h6 class="auth-h6">Welcome back!</h6>
+
+            <label for="username" class="auth-form-label">Username:</label>
+            <input type="text" class="auth-field" name="username" placeholder="Your Username">
+            <p></p>
+
+            <label for="email" class="auth-form-label">Email:</label>
+            <input type="text" class="auth-field" name="email" placeholder="name@example.com">
+            <p></p>
+                
+            <label for="password" class="auth-form-label">Password:</label>
+            <input type="password" class="auth-field" name="password" placeholder="Minimum 8 characters">
+            <p></p>
+            {{!-- this input is dispay:none and make the enter key working with the submition --}}
+            {{!-- <input type="submit" class="create-button button auth-btn" id="input-field"  /> --}}
+                
+            {{!-- another approach with eventListener in script.js --}}
+            <input type="text" id="input-field">
+            <button class="auth-btn" id="submit-button" type="submit">Log In</button>
+            <p class="auth-form-p">Don't have an account yet? <a href="/signup">Sign Up</a></p>
+
+            {{!-- error message --}}
+
+            {{#if errorMessage}}
+            <p class="error">{{errorMessage}}</p>
+            {{/if}}
+        </form>
+      
+    </div>
+</div> 
+
+

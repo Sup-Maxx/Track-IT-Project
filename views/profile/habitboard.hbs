@@ -1,0 +1,98 @@
+<div id="habitboard">
+
+    <div class="left-profile">
+
+        <div id="profile" class="text-start">
+        {{#if info._id}}
+            <h2>Welcome, to your HabitBoard, {{ info.username }}!</h2>
+        {{else}}
+            <p>Still no logged in user, sorry!</p>
+        {{/if}}
+        </div>
+        
+        <div>
+            <a class="button green-button" href="/profile/create-habit">Сreate a new habit</a>
+        </div>
+
+        <div id="habit-cards">
+
+            {{!-- New Card Design --}}
+
+            <div class="wrapper">
+            {{#each info.habit}}
+                <div class="box">
+                    <div class="front-face">
+                        <div class="icon">
+                            <img src="/images/icons/{{category}}.svg" width="40" alt="">
+                        </div>
+                        <span>{{title}}</span>
+                        <p>{{description}}</p>
+                    </div>
+
+                    <div class="back-face">
+                        <span>{{title}}</span>
+
+                        <div class="progression">
+                        {{#if days}}
+                        {{!-- your progression --}}
+                            {{#each days}}
+                                {{#if done}}
+                                <input type="checkbox" name={{name}} class="input-checkbox" checked disabled />
+                                {{else}}
+                                <input type="checkbox" name={{name}} class="input-checkbox" disabled/>
+                                {{/if}}
+                            {{/each}}
+                        {{/if}}
+                        </div>
+
+                        <div class="buttons">
+                            <form action="/profile/{{_id}}/delete" method="POST">
+                                <button class="button red-button">Delete</button>
+                            </form>
+
+                            <form action="/profile/habit/{{_id}}" method="GET">
+                                <button class="button orange-button">Details</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+            </div>
+    
+            {{!-- CARDS --}}
+
+            {{!-- <div class="habit-card-list">
+            {{#each info.habit}}
+
+                <div id="cards-list" class="habit-card">
+                    <div class="habit-card-info">
+                        <img src="/images/icons/{{category}}.svg" width="40" alt="">
+                        <h3 class="habit-title">{{title}}</h3>
+                    </div>
+                <hr> --}}
+
+                    {{!-- week progression --}}
+                    {{!-- <div>
+                    {{#if days}}
+                    <p>your progression</p>
+                    {{#each days}}
+                        {{#if done}}
+                        <input type="checkbox" name={{name}} class="input-checkbox" checked disabled />
+                        {{else}}
+                        <input type="checkbox" name={{name}} class="input-checkbox" />
+                        {{/if}}
+                    {{/each}}
+                    {{/if}}
+                    </div>
+                <hr>
+
+                    <a class="about" href="/profile/habit/{{_id}}">About</a>
+                </div>
+            {{/each}}
+             </div> --}}
+            {{!-- CARDS END--}}
+
+        </div>
+    </div>
+</div>
+    

@@ -1,0 +1,88 @@
+<div id="edit-details">
+
+    <div class="left-profile">
+
+        <div id="profile" class="text-start">
+            <h2>Edit your habit details</h2>
+        </div>
+
+        <div>
+            <a class="go-back-btn" href="/profile/habit/{{habitToEdit._id}}">&#8592; Go back</a>
+        </div>
+
+        <div class="habit-container">
+            {{!-- <h3>{{habitToEdit.title}}</h3> --}}
+            <form action="/profile/{{habitToEdit._id}}/edit" method="POST">
+                {{!-- Title --}}
+                <div>
+                    <img src="/images/icons/{{habitToEdit.category}}.svg" width="80" alt="icon">
+                    <label for="title" class="title-option">
+                        <h5>Title:</h5>
+                        <input type="text" name="title" value="{{habitToEdit.title}}">
+                    </label>
+                </div>
+                {{!-- Category --}}
+                <div>
+                    <label for="category" class="category-option">
+                        <h5>Category</h5>
+                        <div class="input-options">
+                            <input id="category1" type="radio" name="category" value="Health">
+                            <label for="category1">Health</label>
+
+                            <input id="category2" type="radio" name="category" value="Sport">
+                            <label for="category2">Sport</label>
+
+                            <input id="category3" type="radio" name="category" value="Daily Routine">
+                            <label for="category3">Daily Routine</label>
+
+                            <input id="category4" type="radio" name="category" value="Work">
+                            <label for="category4">Work</label>
+
+                            <input id="categoryart" type="radio" name="category" value="Art">
+                            <label for="categoryart">Art</label>
+                        </div>
+                    </label>
+                </div>
+                {{!-- Duration --}}
+                <div>
+                    <label for="duration" class="duration-option">
+                        <h5>Duration</h5>
+                        <div class="input-options">
+                            <input id="duration1" type="radio" name="duration" value="7 days">
+                            <label for="duration1">7 days</label>
+
+                            <input id="duration2" type="radio" name="duration" value="14 days">
+                            <label for="duration2">14 days</label>
+
+                            <input id="duration3" type="radio" name="duration" value="21 days">
+                            <label for="duration3">21 days</label>
+                        </div>
+                    </label>
+                </div>
+                {{!-- Description --}}
+                <div>
+                    <label for="description" class="description-option">
+                        <h5>Description</h5>
+                        <input type="text" name="description" value="{{habitToEdit.description}}">
+                    </label>
+                </div>
+                
+                <div class="create-edit-button">
+                    <form action="/profile/{{habitToEdit._id}}/edit" method="POST">
+                    {{!-- <button class="button" id="edit-button" onclick="changeCellColor()">Edit habit</button> --}}
+                        <button class="button green-button create-edit-button" id="edit-button">Edit habit</button>
+                    </form>
+                </div>
+                
+
+                {{#if errorMessage}}
+                <p class="error">{{errorMessage}}</p>
+                {{/if}}
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{{!-- <script type="text/javascript" src="/public/js/script.js"></script>  --}}

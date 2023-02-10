@@ -1,0 +1,37 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+
+<div class="auth-container">
+    <div class="auth-contact-box">
+
+        <form class="auth-form" action="/signup" method="POST">
+
+        <h2 class="auth">Sign Up</h2>
+        <h6 class="auth-h6">and start using Track-IT</h6>
+
+            <label for="username" class="auth-form-label">Username:</label>
+            <input type="text" class="auth-field" name="username" placeholder="Your Username">
+            <p class="auth-form-p">(3 to 16 characters. It may include '_')</p>
+
+            <label for="email" class="auth-form-label">Email:</label>
+            <input type="text" class="auth-field" name="email" placeholder="name@example.com">
+            <p></p>
+
+            <label for="password" class="auth-form-label">Password:</label>
+            <input type="password" class="auth-field" name="password" placeholder="Minimum 8 characters">
+            <p class="auth-form-p">Must include Uppercase Letter, Lowercase Letter and Numbers.</p>
+
+            {{!-- <button class="auth-btn">Send</button> --}}
+            <button class="auth-btn" type="submit">Create Account</button>
+            <p class="auth-form-p">Already have an account? <a href="/login">Log In</a></p>
+
+            {{!-- error message --}}
+
+            {{#if errorMessage}}
+            <p class="error">{{errorMessage}}</p>
+            {{/if}}
+        </form>
+    </div>
+</div>

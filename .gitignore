@@ -1,0 +1,14 @@
+# Dependency directory
+node_modules
+
+# Debug log from npm
+npm-debug.log
+
+# Environment Variables should NEVER be published
+.env
+
+notes
+
+.DS_Store
+git add .gitignore
+git commit -m '.DS_Store banished!'

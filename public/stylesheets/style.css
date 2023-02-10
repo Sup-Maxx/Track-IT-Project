@@ -1,0 +1,791 @@
+body {
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: MD Primer Bold, Rubik, Lato, Lucida Grande, Lucida Sans Unicode, Tahoma, Sans-Serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ==================================================================================== */
+/* Layout */
+/* Fixed navbar  */
+
+.colored {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: top 0.3s;
+  width: 100%;
+  height: 64px;
+  background-color: #e3dbd1;
+  color: #171717;
+  font-size: 1.5rem;
+  font-weight: 100;   
+}
+
+.transparent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: top 0.3s;
+  width: 100%;
+  height: 64px;
+  color: #e3dbd1;
+  font-size: 1.5rem;
+  font-weight: 100; 
+  background-color: none;
+}
+
+/* The element at the top of the page right after the fixed navigation bar
+   MUST have sufficient top margin or else it will be covered by the bar */
+
+.menu {
+  margin-left: 50vw;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 64px;
+}
+
+.logo-image {
+  height: 64px;
+  justify-content: flex-end;
+}
+
+.nav-link:hover,
+.nav-link:target {
+  color: #7f7354;
+}
+
+.menu-items {
+  list-style-type: none; 
+  margin: 8px 0;
+}
+
+.nav-item {
+  display: inline-block;
+  margin: 0 24px;
+}
+
+.nav-item-logout {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+#logout-button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: bottom 0.3s;
+  width: 100%;
+  display: flex;
+  background-color: #e3dbd1;
+  color: #171717;
+  justify-content: center;
+  width: 100%;
+  height: 32px;
+  align-items: center;
+  
+}
+
+#footer a {
+  color: #171717;
+  text-decoration: none;
+  text-align: center;
+}
+
+#footer p {
+  margin: 2px auto;
+  padding: 2px auto;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+/* ==================================================================================== */
+/* Index Page */
+
+.bg-container {
+  background: url(../images/diary-bg-2.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  width: 100vw;
+  height: 100vh;
+}
+
+.carousel-inner {
+  width: 27vw;
+  margin-left: 22vw;
+  margin-top: 11vh;
+  display: flex;
+  text-align: center;
+  user-select: none;
+}
+
+.carousel-item h6 {
+  font-size: 1.75rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+.carousel-item p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Bebas Neue', cursive;
+  padding-top: 15px;
+  letter-spacing: 1px;
+}
+
+/* ==================================================================================== */
+/* Signup/Login Form */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.auth-container {
+  background: url(../images/diary-bg-2.jpg) center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.auth-contact-box {
+  width: 26vw;
+  margin-top: 5vw;
+  margin-left: 21vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.auth-h6 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+}
+
+.auth-form-label {
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  padding: 0 0 0 4px;
+}
+
+.auth-form-p {
+  font-style: none;
+  margin-bottom: 6px;
+  padding-left: 4px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.auth-field {
+  width: 100%;
+  border: 2px solid #00000000;
+  outline: none;
+  border-radius: 10px;
+  background-color: #e6e6e6f4;
+  margin: 4px auto 4px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.auth-field:hover {
+  background-color: #ffffff;
+}
+
+.auth-btn {
+  margin: 12px 0;
+  padding: 9px;
+  font-weight: 100;
+  text-decoration: none;
+  cursor: pointer;
+  color: #8b7e5c;
+  background-color: #e6e6e6f4;
+  border-radius: 10px;
+  border: 1px solid #8b7e5c;
+}
+
+
+.auth-btn:hover {
+  cursor: pointer;
+  color: darkolivegreen;
+  background-color: #ffffff;
+  border: 3px solid darkolivegreen;
+  box-shadow: 0 0 10px darkolivegreen;
+}
+
+.auth-field:focus {
+  /* border: 2px solid rgba(30, 85, 250, 0.47); */
+  border: 2px solid darkolivegreen;
+  background-color: #ffffff;
+}
+
+.error {
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  margin: 10px auto;
+  padding: 12px;
+  background-color: darkred;
+  color: #e6e6e6f4;
+  border-radius: 10px;
+}
+
+#input-field {
+  display: none;
+}
+
+/* ==================================================================================== */
+/* HabitBoard */
+
+#habitboard {
+  padding-top: 96px;
+  background: url(../images/pensil-dark-bg-big.jpg) center;
+  background-size: 100%;
+  /* height: 420vh; */
+  height: 2700px;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+  margin-left: 10px;
+  height: 96px;
+  color: #f4ecef;
+}
+
+#profile h2{
+  font-size: 1.5rem !important;
+  font-weight: 100 !important;   
+}
+
+.left-profile {
+  margin-left: 20vw;
+}
+
+#habit-cards {
+  margin-top: 20px;
+}
+
+
+.button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 100;
+  text-decoration: none;
+  background-color: #f4ecef;
+  color: #8b7e5c;
+  cursor: pointer;
+  border: 1px solid #8b7e5c;
+}
+
+/* .button {
+  padding: 6px 12px;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  font-weight: 100;
+  text-decoration: none;
+} */
+
+.green-button:hover {
+  cursor: pointer;
+  color: darkolivegreen;
+  border: 3px solid darkolivegreen;
+  box-shadow: 0 0 10px darkolivegreen;
+}
+
+.red-button:hover {
+  cursor: pointer;
+  color: darkred;
+  border: 3px solid darkred;
+  box-shadow: 0 0 10px darkred;
+}
+
+.orange-button:hover {
+  cursor: pointer;
+  color: rgb(185, 124, 11);
+  border: 3px solid rgb(185, 124, 11);
+  box-shadow: 0 0 10px rgb(185, 124, 11);
+}
+
+/* #about a {
+  text-decoration: none;
+  color: darkolivegreen;
+} */
+
+/* -------- */
+
+
+/* .category-image {
+  color: darkgreen;
+} */
+
+/* .button {
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+} */
+
+/* .create-button {
+  background-color: rgba(230, 230, 230, 0.958);
+  color: darkgreen;
+  border: 2px solid darkgreen;
+} */
+
+/* .create-button:hover {
+  transition: 0.1s ease-in-out;
+  background-color: darkgreen;
+  color: white;
+  box-shadow: 0 0 3px #333;
+  cursor: pointer;
+} */
+
+/* .category-image {
+  width: 50px;
+} */
+
+/* .habit-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75em;
+  margin: 50px 50px;
+} */
+
+/* .habit-card {
+  margin: 0 10px;
+  padding: 10px;
+  width: 200px;
+  background-color: rgba(154, 149, 149, 0.6);
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.habit-card:hover {
+  transform: scale(1.10);
+
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+} */
+
+/* ==================================================================================== */
+/* New-Habit */
+
+#create-habit {
+  padding-top: 96px;
+  background: url(../images/pensil-dark-bg-big.jpg) center;
+  background-size: 100%;
+  /* height: 420vh; */
+  height: 2700px;
+}
+
+.go-back-btn {
+  font-weight: 100;
+  text-decoration: none;
+  color: #ab7184;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.go-back-btn:hover {
+  cursor: pointer;
+  color: #f4ecef;
+}
+
+.habit-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 600px;
+  max-width: 50%;
+  background: #252525;
+  border: 1px #f4ecef solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 50px 0;
+  color: #f4ecef;
+  gap: 20;
+}
+
+.habit-container img{
+  margin: auto 20px;
+  margin: auto 28px;
+  position: center;
+}
+
+/* {{!-- Title --}} */
+
+.title-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 8px;
+  padding: 4px 0;
+}
+
+.title-option h5 {
+  margin-right: 100px;
+  padding-top: 4px;
+}
+
+.title-option input{
+  border: 1px #f4ecef solid;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: #e6e6e6f4;
+  width: 100%;
+}
+
+.title-option input:hover{
+  background-color: #ffffff;
+}
+
+.title-option input:focus {
+  outline: 2px solid darkolivegreen;
+  background-color: #ffffff;
+}
+
+/* {{!-- Category --}} */
+
+.category-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 8px;
+  padding: 4px 0;
+}
+
+.category-option h5 {
+  margin-right: 60px;
+  padding-top: 4px;
+}
+
+/* {{!-- Duration --}} */
+
+.duration-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 8px;
+  padding: 4px 0;
+}
+
+.duration-option h5 {
+  margin-right: 60px;
+  padding-top: 4px;
+}
+
+/* {{!-- Description --}} */
+
+.description-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 8px;
+  padding: 4px 0;
+}
+
+.description-option h5 {
+  margin-right: 35px;
+  padding-top: 4px;
+}
+
+.description-option input{
+  border: 1px #f4ecef solid;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: #e6e6e6f4;
+  width: 100%;
+}
+
+.description-option input:hover{
+  background-color: #ffffff;
+}
+
+.description-option input:focus {
+  outline: 2px solid darkolivegreen;
+  background-color: #ffffff;
+}
+
+/* radio-buttons */
+
+.input-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.create-edit-button {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 20px;
+}
+
+
+/* .green-button {
+  border-radius: 10px;
+  font-weight: 100;
+  text-decoration: none;
+  padding: 6px 12px;
+  background-color: #f4ecef;
+  color: #8b7e5c;
+  cursor: pointer;
+  border: 1px solid #8b7e5c;
+} */
+
+/* .green-button:hover {
+  cursor: pointer;
+  color: darkolivegreen;
+  border: 3px solid darkolivegreen;
+  box-shadow: 0 0 10px darkolivegreen;
+} */
+
+/* ==================================================================================== */
+/* Habit-details */
+
+#habit-details {
+  padding-top: 96px;
+  background: url(../images/pensil-dark-bg-big.jpg) center;
+  background-size: 100%;
+  /* height: 420vh; */
+  height: 2700px;
+}
+
+/* ==================================================================================== */
+/* Habit-details */
+
+#edit-details {
+  padding-top: 96px;
+  background: url(../images/pensil-dark-bg-big.jpg) center;
+  background-size: 100%;
+  /* height: 420vh; */
+  height: 2700px;
+}
+
+.title-option img{
+  margin: 4px 16px 8px;
+}
+
+.check-progress{
+  margin-left: 8px;
+  width: 125px;
+}
+
+.buttons-details{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 24px 0 20px;
+}
+
+.btn-center {
+  margin-left: 27vh;
+
+}
+
+/* .habit-container button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 24px 0 20px;
+} */
+
+/* ==================================================================================== */
+/* General */
+
+.button {
+  /* letter-spacing: 1px; */
+  padding: 6px 12px;
+  border-radius: 10px;
+  /* font-weight: 400; */
+  /* text-transform: uppercase; */
+  text-decoration: none;
+}
+
+.create-button {
+  /* background-color: rgba(0, 0, 0, .05); */
+  background-color: rgba(230, 230, 230, 0.958);
+  color: darkgreen;
+  border: 2px solid darkgreen;
+}
+
+.create-button:hover {
+  /* transition: 0.2s ease-in-out; */
+  background-color: darkgreen;
+  /* border: 1px solid #333; */
+  color: white;
+  box-shadow: 0 0 3px #333;
+  cursor: pointer;
+}
+
+.details-button {
+  background-color: rgba(255, 255, 255,);
+  color: darkblue;
+  border: 2px solid darkblue;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-button:hover {
+  transition: 0.2s ease-in-out;
+  background-color: blue;
+  border: 1px solid #333;
+  color: white;
+  box-shadow: 0 0 10px #333;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: white;
+  color: darkred;
+  border: 2px solid darkred;
+}
+
+.delete-button:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #951c12;
+  border: 1px solid #333;
+  color: white;
+  box-shadow: 0 0 10px #333;
+  cursor: pointer;
+}
+
+/* =================================== */
+/* New Card Design */
+/* habitboard page */
+
+.front-face img {
+  width: 75px;
+  margin-top: 10px;
+}
+
+.progression {
+    max-width: 130px;
+    display: block;
+}
+
+.front-face p {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 15px;
+}
+
+.buttons {
+    position: fixed;
+    bottom: 0;
+
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper .box{
+  width: 250px;
+  margin: 25px 10px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.front-face, .back-face {
+  border-radius: 15px;
+}
+
+.wrapper .box .front-face{
+  background: rgb(234, 223, 226);
+  height: 220px;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+
+.box .front-face span,
+.box .back-face span{
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* .box .front-face, */
+.box .front-face span{
+  color: rgb(187,149,162);
+  margin: 0 10px;
+}
+.box .back-face{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 220px;
+  width: 100%;
+  padding: 16px;
+  color: #fff;
+  opacity: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transform: translateY(110px) rotateX(-90deg);
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+
+.box .back-face p{
+  margin-top: 10px;
+  text-align: justify;
+}
+.box:hover .back-face{
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+.box:hover .front-face{
+  opacity: 0;
+  transform: translateY(-110px) rotateX(90deg);
+}
